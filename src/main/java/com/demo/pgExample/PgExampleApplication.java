@@ -1,12 +1,14 @@
 package com.demo.pgExample;
 
-import org.springframework.boot.CommandLineRunner;
+import java.util.List;
+
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
-import com.demo.pgExample.dao.StudentDao;
-import com.demo.pgExample.entity.Student;
+
+
+
 
 @SpringBootApplication
 public class PgExampleApplication {
@@ -16,17 +18,27 @@ public class PgExampleApplication {
 	}
 
 	// It do something on bean initalizing, this is the command line runner
-	@Bean
-	public CommandLineRunner commandLineRunner(StudentDao studentDao) {
-		return runner -> {
-			createStudent(studentDao);
-		};
-	}
+	// @Bean
+	// public CommandLineRunner commandLineRunner(StudentService studentService) {
+	// 	return runner -> {
+	// 		getAllStudents(studentService);
+	// 	};
+	// }
 
-	private void createStudent(StudentDao studentDao) {
-		Student newStudent = new Student("Mohamed", "Khaled", "mohamedk@gmail.com");
+	// private void createStudentAndGetById(StudentService studentService) {
+	// 	Student newStudent = new Student("Mohamed", "Khaled", "mohamedk@gmail.com");
 
-		studentDao.save(newStudent);
-		System.out.println("Student created with id :" + newStudent.getId());
-	}
+	// 	studentService.save(newStudent);
+	// 	System.out.println("Student created with id :" + newStudent.getId());
+
+	// 	Student currentStudent = studentService.findById(newStudent.getId());
+	// 	System.out.println("The Student Data after fetching is: " + currentStudent);
+	// }
+
+	// public List<Student> getAllStudents(StudentService studentService) {
+	// 	List<Student> students = studentService.findAll();
+	// 	System.out.println(students);
+	// 	return students;
+	// }
+	
 }

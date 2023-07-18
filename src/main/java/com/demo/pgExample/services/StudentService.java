@@ -1,27 +1,36 @@
-package com.demo.pgExample.services;
+// package com.demo.pgExample.services;
 
-import org.springframework.stereotype.Repository;
+// import java.util.List;
 
-import com.demo.pgExample.dao.StudentDao;
-import com.demo.pgExample.entity.Student;
+// import org.springframework.stereotype.Service;
 
-import jakarta.persistence.EntityManager;
-import jakarta.transaction.Transactional;
+// import com.demo.pgExample.entity.Student;
+// import com.demo.pgExample.repository.AutoWired;
+// import com.demo.pgExample.repository.StudentRepository;
+// @Service
+// public class StudentService {
+    
+//     private StudentRepository studentRepository;
 
-@Repository
-public class StudentService implements StudentDao {
-    private EntityManager entitiyManager;
+//     @AutoWired
+//     public  StudentService (StudentRepository studentRepository ){
+//         this.studentRepository = studentRepository;
+//     }
 
-    @AutoWired
-    public StudentService(EntityManager entityManager) {
-        this.entitiyManager = entityManager;
+//     public Student getSingleStudent(int id){
+//         return this.studentRepository.findById(id);
+//     }
 
-    } 
+//     public List<Student> getAllStudents(){
+//         return this.studentRepository.findAll();
+//     }
 
-    @Override
-    @Transactional
-    public void save(Student student) {
+//     public String addStudent(Student data){
+//         this.studentRepository.save(data);
+//         return "Student added successfully";
+//     }
 
-        entitiyManager.persist((student));
-    }
-}
+//     public String update(int id,Student data){
+//         return this.studentRepository.save(id, data);
+//     }
+// }
