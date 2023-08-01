@@ -12,8 +12,8 @@ import com.demo.pgExample.exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
-@Repository
-public interface StudentRepository extends JpaRepository <Student,Integar> {
+// @Repository
+public interface StudentRepository extends JpaRepository <Student,Integer> {
     // private EntityManager entitiyManager;
 
     // @AutoWired
